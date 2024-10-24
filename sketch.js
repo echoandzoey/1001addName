@@ -11,8 +11,8 @@ function setup() {
   canvas.parent('canvas-container');
   imageMode(CORNER); // 改为 CORNER 模式，便于定位
   textAlign(CENTER, TOP); // 文本水平居中，垂直顶对齐
-  textSize(32);
-  textFont('Dinxie'); // 设置字体为 Dinxie
+  textSize(42);
+  textFont('Ark Pixel'); // 设置字体为 Ark Pixel
   fill(0); // 设置文字颜色为黑色
   noLoop(); // 停止 draw 循环，因为我们不需要持续绘制
 }
@@ -26,7 +26,9 @@ function draw() {
   // 如果已经添加了文字，则绘制文字
   if (textAdded) {
     let name = document.getElementById('nameInput').value;
-    let textYPosition = (740 / 1056) * img.height; // 计算文字的 Y 坐标
+    let textYPosition = (720 / 1056) * img.height; // 计算文字的 Y 坐标
+    textFont('Ark Pixel'); // 确保在绘制文本时设置字体
+    fill(0, 0, 0, 230);
     text(name, width / 2, textYPosition); // 在计算的位置绘制文字
   }
 }
