@@ -9,32 +9,53 @@
     <title>1001addName</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="sketch.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- 引入 CSS 文件 -->
     <style>
       @font-face {
-        font-family: 'Ark Pixel';
-        src: url('ark-pixel-10px-monospaced-zh_cn.woff2')
-          format('woff2'); /* 确保路径正确 */
+        font-family: 'DinkieBitmap'; /* 字体名称 */
+        src: url('DinkieBitmap-9px.woff2') format('woff2'),
+          /* 确保路径正确 */ url('DinkieBitmap-9px.woff')
+            format('woff');
         font-weight: normal;
         font-style: normal;
       }
-      body {
+
+      #app {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-color: #000;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        font-family: 'Ark Pixel', sans-serif; /* 使用 Ark Pixel 字体 */
+        justify-content: center;
       }
-      input,
-      button {
-        margin: 10px 0;
-        padding: 5px;
-        font-size: 16px;
+
+      .loading {
+        font-family: 'DinkieBitmap', sans-serif; /* 使用 DinkieBitmap 字体 */
+        font-size: 2.5vw; /* 字体大小 */
+        color: #ffffff; /* 字体颜色 */
+        padding: 1.2em; /* 内边距 */
+        position: relative; /* 相对定位 */
+      }
+
+      .chinese-text {
+        font-family: 'DinkieBitmap', sans-serif; /* 使用 DinkieBitmap 显示中文 */
+        color: #ffffff; /* 字体颜色 */
       }
     </style>
   </head>
   <body>
-    <h1>1001addName</h1>
-    <input type="text" id="nameInput" placeholder="Input Your Name" />
-    <button onclick="addTextToImage()">Generate Image</button>
-    <div id="canvas-container"></div>
+    <div id="app">
+      <h1 class="loading">1001addName</h1>
+      <!-- 使用中文文本 -->
+      <input
+        type="text"
+        id="nameInput"
+        placeholder="Input Your Name"
+      />
+      <button onclick="addTextToImage()">Generate Image</button>
+      <div id="canvas-container"></div>
+    </div>
   </body>
 </html>
