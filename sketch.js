@@ -3,7 +3,7 @@ let canvas;
 let textAdded = false;
 //
 function preload() {
-  img = loadImage('background.jpg'); // ��ȷ����ͬһĿ¼����һ����Ϊ background.jpg ��ͼƬ
+  img = loadImage('backgroundWomenDay.jpg'); // ��ȷ����ͬһĿ¼����һ����Ϊ background.jpg ��ͼƬ
 }
 
 function setup() {
