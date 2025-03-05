@@ -28,7 +28,7 @@ function draw() {
     let name = document.getElementById('nameInput').value;
     let textYPosition = (680 / 1056) * img.height; // 计算 Y 位置
     textFont('DinkieBitmap'); // 确保使用正确的字体
-    fill(0, 0, 0, 230);
+    fill(78, 37, 93, 255); // 使用不透明的紫色
     textSize(100); // 增大字体大小
     text(name, width / 2, textYPosition); // 在指定位置绘制文本
   }
