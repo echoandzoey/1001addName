@@ -1,35 +1,35 @@
 let img;
 let canvas;
 let textAdded = false;
-
+//
 function preload() {
-  img = loadImage('background.jpg'); // ÇëÈ·±£ÔÚÍ¬Ò»Ä¿Â¼ÏÂÓÐÒ»¸öÃûÎª background.jpg µÄÍ¼Æ¬
+  img = loadImage('background.jpg'); // ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½Í¬Ò»Ä¿Â¼ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Îª background.jpg ï¿½ï¿½Í¼Æ¬
 }
 
 function setup() {
   canvas = createCanvas(img.width, img.height);
   canvas.parent('canvas-container');
-  imageMode(CORNER); // ¸ÄÎª CORNER Ä£Ê½£¬±ãÓÚ¶¨Î»
-  textAlign(CENTER, TOP); // ÎÄ±¾Ë®Æ½¾ÓÖÐ£¬´¹Ö±¶¥¶ÔÆë
+  imageMode(CORNER); // ï¿½ï¿½Îª CORNER Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½Î»
+  textAlign(CENTER, TOP); // ï¿½Ä±ï¿½Ë®Æ½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   textSize(42);
-  textFont('DinkieBitmap'); // ÉèÖÃ×ÖÌåÎª DinkieBitmap
-  fill(0); // ÉèÖÃÎÄ×ÖÑÕÉ«ÎªºÚÉ«
-  noLoop(); // Í£Ö¹ draw Ñ­»·£¬ÒòÎªÎÒÃÇ²»ÐèÒª³ÖÐø»æÖÆ
+  textFont('DinkieBitmap'); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª DinkieBitmap
+  fill(0); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«Îªï¿½ï¿½É«
+  noLoop(); // Í£Ö¹ draw Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 }
 
 function draw() {
-  // Çå³ý»­²¼
+  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   clear();
-  // »æÖÆ±³¾°Í¼Æ¬
+  // ï¿½ï¿½ï¿½Æ±ï¿½ï¿½ï¿½Í¼Æ¬
   image(img, 0, 0, img.width, img.height);
 
-  // Èç¹ûÒÑ¾­Ìí¼ÓÁËÎÄ×Ö£¬Ôò»æÖÆÎÄ×Ö
+  // ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   if (textAdded) {
     let name = document.getElementById('nameInput').value;
-    let textYPosition = (720 / 1056) * img.height; // ¼ÆËãÎÄ×ÖµÄ Y ×ø±ê
-    textFont('DinkieBitmap'); // È·±£ÔÚ»æÖÆÎÄ±¾Ê±ÉèÖÃ×ÖÌå
+    let textYPosition = (720 / 1056) * img.height; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ Y ï¿½ï¿½ï¿½ï¿½
+    textFont('DinkieBitmap'); // È·ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½Ä±ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     fill(0, 0, 0, 230);
-    text(name, width / 2, textYPosition); // ÔÚ¼ÆËãµÄÎ»ÖÃ»æÖÆÎÄ×Ö
+    text(name, width / 2, textYPosition); // ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   }
 }
 
@@ -37,11 +37,11 @@ function addTextToImage() {
   let name = document.getElementById('nameInput').value;
   if (name) {
     textAdded = true;
-    redraw(); // ÖØÐÂ»æÖÆ»­²¼
-    // Ê¹ÓÃÊäÈëµÄÃû×Ö×÷ÎªÎÄ¼þÃû£¬Ìæ»»¿Õ¸ñÎªÏÂ»®Ïß
-    let fileName = name.replace(/\s+/g, '_'); // Ìæ»»¿Õ¸ñÎªÏÂ»®Ïß
-    saveCanvas(canvas, fileName, 'jpg'); // ±£´æÍ¼Æ¬
+    redraw(); // ï¿½ï¿½ï¿½Â»ï¿½ï¿½Æ»ï¿½ï¿½ï¿½
+    // Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ»»ï¿½Õ¸ï¿½Îªï¿½Â»ï¿½ï¿½ï¿½
+    let fileName = name.replace(/\s+/g, '_'); // ï¿½æ»»ï¿½Õ¸ï¿½Îªï¿½Â»ï¿½ï¿½ï¿½
+    saveCanvas(canvas, fileName, 'jpg'); // ï¿½ï¿½ï¿½ï¿½Í¼Æ¬
   } else {
-    alert('ÇëÊäÈëÄúµÄÃû×Ö');
+    alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');
   }
 }
