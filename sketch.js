@@ -3,7 +3,7 @@ let canvas;
 let textAdded = false;
 //
 function preload() {
-  img = loadImage('backgroundWomenDay.jpg'); // 确保在同一目录下有一张名为 background.jpg 的图片
+  img = loadImage('backgroundNormal.jpg'); // 确保在同一目录下有一张名为 background.jpg 的图片
 }
 
 function setup() {
@@ -32,6 +32,18 @@ function draw() {
     textSize(100); // 增大字体大小
     text(name, width / 2, textYPosition); // 在指定位置绘制文本
   }
+}
+
+function changeBackground() {
+  let selectedValue = document.getElementById('backgroundSelect').value;
+  let newImagePath = selectedValue === 'normal' ? 'backgroundNormal.jpg' : 'backgroundWomenDay.jpg';
+
+  loadImage(newImagePath, (loadedImage) => {
+    img = loadedImage; // 更新图像
+    resizeCanvas(img.width, img.height); // 调整画布大小
+    clear(); // 清除画布
+    image(img, 0, 0, img.width, img.height); // 绘制新背景
+  });
 }
 
 function addTextToImage() {
